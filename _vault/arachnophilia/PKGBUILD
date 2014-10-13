@@ -1,0 +1,37 @@
+# Maintainer: Anton Bazhenov <anton.bazhenov at gmail>
+# Contributor: Nathan Owe <ndowens04 at gmail>
+# Contributor: Gen2ly <toddrpartridge@gmail.com>
+
+pkgname=arachnophilia
+pkgver=5.5.2691
+pkgrel=2
+pkgdesc="A web page development workshop and general programming tool"
+arch=('any')
+url="http://www.arachnoid.com/arachnophilia/index.php"
+license=('LGPL' 'custom:careware')
+depends=('jre7-openjdk')
+source=("http://www.arachnoid.com/arachnophilia/Arachnophilia.jar"
+        "http://www.arachnoid.com/lutusp/old_articles/careware.rtf"
+        "${pkgname}.desktop"
+        "${pkgname}.sh")
+noextract=("Arachnophilia.jar")
+md5sums=('df63d7f8785de941240b61cee1a09fd8'
+         '390f9eb1765746df88bbfeaf282252b8'
+         '78912371bf65a1a23fe2de984d0e9a67'
+         '27010dd0f2b690ca78392dffcc25f210')
+
+package() {
+  cd "${srcdir}"
+
+  # Install program files
+  install -Dm755 ${pkgname}.sh "${pkgdir}/usr/bin/${pkgname}"
+  install -Dm644 Arachnophilia.jar "${pkgdir}/usr/share/${pkgname}/Arachnophilia.jar"
+
+  # Install a desktop entry
+  bsdtar -xf Arachnophilia.jar Arachnophilia.png
+  install -Dm644 Arachnophilia.png "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
+  install -Dm644 ${pkgname}.desktop "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+
+  # Install a license file
+  install -Dm644 careware.rtf "${pkgdir}/usr/share/licenses/${pkgname}/careware.rtf"
+}

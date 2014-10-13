@@ -1,0 +1,20 @@
+#!/bin/sh
+# Toggle between monitors on a single HDMI port
+
+# Inherit variables from the configuration file
+conf="/etc/hdmiaroo.conf"
+conf="./hdmiaroo.conf"
+if [ -r "$conf" ]; then
+  source "$conf"
+else
+  echo ""${0##*/}": conf. non-exist: "$conf"" && exit 1; fi
+
+echo $port
+
+
+
+
+# Define admin. program if write permission is needed
+#if [ ! -w "$2" ]; then
+#  [ ! hash sudo 2>&- ] && { echo "${0##*/}: program required: sudo"; exit 1; }
+#  sudo=sudo; fi

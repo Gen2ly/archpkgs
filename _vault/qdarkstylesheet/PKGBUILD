@@ -1,0 +1,3 @@
+git clone https://github.com/ColinDuquesnoy/QDarkStyleSheet.git
+pm i python2-distribute
+sudo python2 setup.py install

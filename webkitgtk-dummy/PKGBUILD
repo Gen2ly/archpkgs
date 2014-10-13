@@ -1,0 +1,13 @@
+pkgname=webkitgtk-dummy
+pkgver=2.4.4
+pkgrel=1
+arch=('any')
+pkgdesc="Best package in the universe"
+url="http://bitbucket.org/wooptoo/bin/src/tip/repo-cache"
+license=('GPL')
+depends=()
+makedepends=()
+provides=('webkitgtk')
+replaces=('webkitgtk')
+source=()
+md5sums=()

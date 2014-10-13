@@ -1,0 +1,21 @@
+# submitter: Gen2ly <toddrpartridge@gmail.com>
+
+pkgname=gnome-shell-extension-taskbar
+pkgver=3.6
+pkgrel=1
+pkgdesc="Dock in the system panel"
+arch=(any)
+url="https://extensions.gnome.org/extension/368/taskbar-with-desktop-button-to-minimizeunminimize-/"
+license=('GPL')
+depends=('gnome-shell')
+source=(http://svn.xesnet.fr/gnomeextensions/tags/TaskBar/TaskBar@xesnet.fr.v5.shell-extension.zip)
+#noextract=('TaskBar@xesnet.fr.v5.shell-extension.zip')
+md5sums=('a6c3a5cd9b117dd722a406956af8edd4')
+
+package() {
+  _pkgdir="$pkgdir/usr/share/gnome-shell/extensions/TaskBar@xesnet.fr/"
+  mkdir -p "$_pkgdir"
+  bsdtar xf "TaskBar@xesnet.fr.v5.shell-extension.zip" -C "$_pkgdir"
+  sed -i 's/3.5/3.6/' "$_pkgdir"/metadata.json
+}
+# vim:set ts=2 sw=2 et:

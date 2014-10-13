@@ -1,0 +1,49 @@
+# Maintainer: Todd Partridge <http://https://github.com/Gen2ly/archpkgs>
+
+pkgname=xresprobe
+pkgver=0.4.23
+pkgrel=1
+pkgdesc="Probes both laptop and DDC-compliant screens for their standard resolutions, and returns a specifically-formatted, easy-to-parse output"
+arch=('x86_64' 'i386')
+url="http://packages.debian.org/sid/xresprobe"
+license=('GPL')
+groups=()
+depends=()
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+if [ "$CARCH" = "x86_64" ]; then
+  source=('http://ftp.us.debian.org/debian/pool/main/x/xresprobe/xresprobe_0.4.23debian1-1_amd64.deb')
+  md5sums=('0980a70858f400b4a0bcafd48df56c5c')
+elif [ "$CARCH" = "i686" ]; then
+  source=('http://ftp.us.debian.org/debian/pool/main/x/xresprobe/xresprobe_0.4.23debian1-1_i386.deb')
+  md5sums=('f38259c82907e430a99080ea785e4b3a')
+noextract=()
+
+prepare() {
+	cd "$srcdir/$pkgname-$pkgver"
+	patch -p1 -i "$srcdir/$pkgname-$pkgver.patch"
+}
+
+build() {
+	cd "$srcdir/$pkgname-$pkgver"
+	./configure --prefix=/usr
+	make
+}
+
+check() {
+	cd "$srcdir/$pkgname-$pkgver"
+	make -k check
+}
+
+package() {
+	cd "$srcdir/$pkgname-$pkgver"
+	make DESTDIR="$pkgdir/" install
+}

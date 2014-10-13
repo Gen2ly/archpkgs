@@ -1,0 +1,9 @@
+#!/bin/sh
+# Resume script for /usr/bin/discretemon for discrete external monitor
+
+case "$1" in
+  resume | thaw )
+    #sleep 1
+    #/usr/bin/xuserrun /usr/bin/discretemon ;;
+    /usr/bin/xuserrun /usr/bin/meld ;;
+esac
