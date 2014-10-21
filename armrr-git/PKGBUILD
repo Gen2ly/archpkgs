@@ -2,7 +2,7 @@
 
 pkgname=armrr-git
 _pkgname=${pkgname%-*}
-pkgver=0.82.0
+pkgver=0.84.1
 pkgrel=1
 pkgdesc="Arch Linux script that downloads a pacman ranked mirrorlist."
 arch=("any")

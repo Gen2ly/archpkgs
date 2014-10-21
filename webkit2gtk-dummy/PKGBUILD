@@ -1,13 +1,13 @@
-pkgname=webkitgtk2-dummy
+pkgname=webkit2gtk-dummy
 pkgver=2.4.4
 pkgrel=1
 arch=('any')
 pkgdesc="Best package in the universe"
-url="http://bitbucket.org/wooptoo/bin/src/tip/repo-cache"
+url="http://foobar.org/tooptoo/bin/src/tip/repo-cache"
 license=('GPL')
 depends=()
 makedepends=()
-provide=('webkitgtk2')
-replaces=('webkitgtk2')
+provide=('webkit2gtk')
+replaces=('webkit2gtk')
 source=()
 md5sums=()
