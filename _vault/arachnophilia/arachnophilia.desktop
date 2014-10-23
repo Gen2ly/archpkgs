@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Version=1.0
-Name=Arachnophilia
-Comment=A web page development workshop and general programming tool
-Exec=arachnophilia
-Icon=arachnophilia
-Terminal=false
-Categories=Development;
