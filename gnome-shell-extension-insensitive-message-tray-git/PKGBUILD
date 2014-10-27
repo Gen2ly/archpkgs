@@ -1,10 +1,10 @@
 # Maintainer: Todd Partridge <http://https://github.com/Gen2ly/archpkgs>
 
-pkgname=gnome-shell-insensitive-message-tray-git
+pkgname=gnome-shell-extension-insensitive-message-tray-git
 _pkgname=insensitive-message-tray
 pkgver=25
 pkgrel=1
-pkgdesk="GNOME shell extension to disable bottom-screen, mouse-gesture to show message tray."
+pkgdesc="GNOME shell extension to disable bottom-screen, mouse-gesture to show message tray."
 arch=("any")
 url="https://github.com/tuxor1337/"$_pkgname"/"
 license=("GPL2")
@@ -12,8 +12,10 @@ depends=("gnome-shell")
 makedepends=("git")
 conflicts=("")
 install=
-source=("git://github.com/tuxor1337/"$_pkgname"")
-md5sums=('SKIP')
+source=("git://github.com/tuxor1337/"$_pkgname""
+        license.txt)
+md5sums=('SKIP'
+         b234ee4d69f5fce4486a80fdaf4a4263)
 
 pkgver() {
   cd $srcdir/$_pkgname
