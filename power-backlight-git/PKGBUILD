@@ -2,9 +2,9 @@
 
 pkgname=power-backlight-git
 _pkgname=${pkgname%-*}
-pkgver=0.80.0
+pkgver=0.80.2
 pkgrel=1
-pkgdesc="Set screen backlight brightness dependant on power source type."
+pkgdesc="Set screen backlight brightness dependent on power source type."
 arch=("any")
 url="https://github.com/Gen2ly/"$_pkgname"/"
 license=("GPL2")
