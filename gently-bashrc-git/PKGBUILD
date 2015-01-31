@@ -1,4 +1,4 @@
-# Maintainer: Todd Partridge <http://https://github.com/Gen2ly/archpkgs>
+# Maintainer: Todd Partridge <https://github.com/Gen2ly/archpkgs>
 
 pkgname=gently-bashrc-git
 _pkgname=${pkgname%-*}

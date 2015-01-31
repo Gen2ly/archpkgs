@@ -1,4 +1,4 @@
-# Maintainer: Todd Partridge <http://https://github.com/Gen2ly/archpkgs>
+# Maintainer: Todd Partridge <https://github.com/Gen2ly/archpkgs>
 # Thanks to: aya https://bbs.archlinux.org/viewtopic.php?pid=1225244#p1225244
 
 pkgname=systemd-loop-swapfile
