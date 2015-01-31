@@ -5,4 +5,7 @@ root-directory-cruft
 # package and source directories
 */pkg
 */src
+# packages and package source files
+*/*.src.tar.gz
+*/*.pkg.tar.xz
 
