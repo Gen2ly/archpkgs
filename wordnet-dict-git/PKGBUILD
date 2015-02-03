@@ -22,7 +22,7 @@ pkgver() {
 
 package() {
   cd $srcdir/$_pkgname
-  install -Dm755 define      "$pkgdir"/usr/bin/define
+  install -Dm755 dict        "$pkgdir"/usr/bin/dict
   install -Dm755 thes        "$pkgdir"/usr/bin/thes
   install -Dm644 license.txt "$pkgdir"/usr/share/licenses/$_pkgname/license.txt
 }
