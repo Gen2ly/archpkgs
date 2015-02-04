@@ -1,8 +1,7 @@
 # reserved backup directories ignore
 _vault
 # local use configuration
-root-directory-cruft
-root-directory-cruft/*
+root-directory-cruft/
 # package and source directories
 */pkg
 */src
