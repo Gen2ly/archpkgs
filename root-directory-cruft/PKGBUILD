@@ -2,43 +2,43 @@
 
 pkgname=root-directory-cruft
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Configuration files in root directory that don't belong to any package."
 arch=('any')
 url="http://foobar.org"
 license=('none')
 depends=('')
-source=(systemd_activate-numlock.conf
-        sysctl.d_99-sysctl.conf
-        modprobe.d_loop.conf
-        modprobe.d_nbd.conf
-        modules-load.d_isofs.conf
-        modules-load.d_kvm.conf
-        modules-load.d_loop.conf
-        modules-load.d_virtualbox.conf
-        profile.d_vim-default-ed.sh)
-md5sums=('6a9b1242ddbbe4d7f76d6c3d6d53c37e'
-         'bd5e931b564579edb5ee97f303832a67'
+source=(99-sysctl.conf
+        activate-numlock.conf
+        isofs.conf
+        kvm.conf
+        loop-options.conf
+        loop.conf
+        nbd-options.conf
+        vbox.conf
+        vim-default.sh)
+md5sums=('bd5e931b564579edb5ee97f303832a67'
+         '6a9b1242ddbbe4d7f76d6c3d6d53c37e'
+         'b5f7c9c23e83c1ba85ff17baa3e434d7'
+         '33acae5f5867e13e39c8e5ec376e9365'
          '9d98839361aba1a50a0cfa5fd31333e8'
+         '6f6c992dbeb67bb920a1474b254afb83'
          '1e4f57b9f12768880a21d1219aff40a4'
-         '0bc20e405e789587894773216ee87c7e'
-         '6a68c18b0f12cc438cae494ea26e8e38'
-         '76113fcd80ba8c32d2df2258ef92ec59'
          '2ce9a2ffe6028531d18b5efe59494d8b'
          'd3b3e55d07d8de15802eedde0e5ffaa8')
 
 package() {
   _pd=$pkgdir/etc
-  install -Dm644 modprobe.d_loop.conf           $_pd/modprobe.d/loop.conf
-  install -Dm644 modprobe.d_nbd.conf            $_pd/modprobe.d/nbd.conf
-  install -Dm644 modules-load.d_isofs.conf      $_pd/modules-load.d/isofs.conf
-  install -Dm644 modules-load.d_kvm.conf        $_pd/modules-load.d/kvm.conf
-  install -Dm644 modules-load.d_loop.conf       $_pd/modules-load.d/loop.conf
-  install -Dm644 modules-load.d_virtualbox.conf $_pd/modules-load.d/vbox.conf
-  install -Dm755 profile.d_vim-default-ed.sh    $_pd/profile.d/vim-default-ed.sh
-  install -Dm644 sysctl.d_99-sysctl.conf        $_pd/sysctl.d/99-sysctl.conf
-  install -Dm644 systemd_activate-numlock.conf \
+  install -Dm644 99-sysctl.conf         $_pd/sysctl.d/99-sysctl.conf
+  install -Dm644 activate-numlock.conf  \
     $_pd/systemd/system/getty@.service.d/activate-numlock.conf
+  install -Dm644 isofs.conf             $_pd/modules-load.d/isofs.conf
+  install -Dm644 kvm.conf               $_pd/modules-load.d/kvm.conf
+  install -Dm644 loop.conf              $_pd/modules-load.d/loop.conf
+  install -Dm644 loop-options.conf      $_pd/modprobe.d/loop-options.conf
+  install -Dm644 nbd-options.conf       $_pd/modprobe.d/nbd-options.conf
+  install -Dm644 vbox.conf              $_pd/modules-load.d/vbox.conf
+  install -Dm755 vim-default.sh         $_pd/profile.d/vim-default.sh
 }
 
 # vim:set ts=2 sw=2 et:
