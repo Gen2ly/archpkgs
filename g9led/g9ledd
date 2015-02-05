@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 # Logitech G9 mouse LED color-changing daemon (by time interval)
 
 # Time until change

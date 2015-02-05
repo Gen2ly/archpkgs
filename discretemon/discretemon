@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 # Sets an external monitor with a laptop as discrete (disables laptop monitor
 # when external present, also sets correct DPI and text scaling).
 
