@@ -3,9 +3,14 @@ _vault
 # local use configuration
 root-directory-cruft/
 # package and source directories
-*/pkg
-*/src
+#*/pkg
+#*/src
 # packages and package source files
-*/*.src.tar.gz
-*/*.pkg.tar.xz
+#*/*.src.tar.gz
+#*/*.pkg.tar.xz
+# Disallow all sub-files and sub-directories
+*/*
+# Disallow exceptions
+!/*/PKGBUILD
+!/*/*.install
 

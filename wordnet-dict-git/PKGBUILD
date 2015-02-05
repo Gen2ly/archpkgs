@@ -2,7 +2,7 @@
 
 pkgname=wordnet-dict-git
 _pkgname=${pkgname%-*}
-pkgver=
+pkgver=1.0.0
 pkgrel=1
 pkgdesc="Scripts that parse the output of WordNet to provide basic, command line, versions of a dictionary and thesaurus."
 arch=("any")
